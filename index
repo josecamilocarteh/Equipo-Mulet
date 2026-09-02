@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
+<title>Equipo Jaime Mulet · Accesos Legislativos</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="manifest" href="/manifest.json">
+<meta name="theme-color" content="#1f3552">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Mulet">
+<style>
+  :root{
+    --ink:#16243a;--ink2:#1f3552;--bg:#e9edf2;--card:#ffffff;
+    --teal:#0f766e;--blue:#1e3a5f;--amber:#d98324;
+    --yellow:#c9941f;--pink:#c2447a;--red:#c23b3b;--green:#2f8f4e;
+    --rk-mulet:#1e3a5f;--rk-tapia:#0f766e;--rk-santana:#c23b3b;
+    --rk-olmos:#c9941f;--rk-urcullu:#7a4fc2;
+    --text:#2b3a4f;--muted:#7c8aa0;--line:#dde3ec;
+    --shadow:0 1px 3px rgba(22,36,58,.07),0 10px 30px rgba(22,36,58,.06);
+    --drive-accent:#1a73e8;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.5;-webkit-font-smoothing:antialiased;min-height:100vh;display:flex;flex-direction:column}
+  a{text-decoration:none;color:inherit}
+  .masthead{background:radial-gradient(120% 140% at 85% -10%,#243a5c 0%,transparent 55%),linear-gradient(180deg,var(--ink) 0%,var(--ink2) 100%);color:#fff;padding:44px 24px 38px;position:relative;overflow:hidden}
+  .masthead::after{content:"";position:absolute;left:24px;right:24px;bottom:0;height:3px;background:linear-gradient(90deg,var(--amber) 0%,var(--amber) 64px,transparent 64px)}
+  .mast-inner{max-width:1180px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap}
+  .mast-left{flex:1;min-width:0}.mast-right{display:flex;align-items:center;flex-shrink:0}
+  .mast-photo{width:60px;height:60px;border-radius:50%;flex-shrink:0;object-fit:cover;object-position:center top;border:2px solid rgba(255,255,255,.55);box-shadow:0 4px 14px rgba(0,0,0,.22)}
+  @media(max-width:640px){.mast-photo{width:48px;height:48px}}
+  .eyebrow{font-size:12px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:#9fb4d0;margin-bottom:10px}
+  .mast-title{font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:clamp(28px,6vw,46px);line-height:1.02;letter-spacing:-.01em;color:#fff}
+  .mast-sub{margin-top:12px;font-size:14.5px;color:#b9c7dc;display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center}
+  .mast-sub .dot{width:4px;height:4px;border-radius:50%;background:#52688a}
+  .pill{display:inline-block;border:1px solid #3a5079;color:#cdd9ea;border-radius:999px;padding:3px 11px;font-size:12.5px;font-weight:500}
+  .layout{flex:1;max-width:1180px;width:100%;margin:0 auto;padding:34px 24px 8px;display:grid;grid-template-columns:1fr 320px;gap:28px;align-items:start}
+  @media(max-width:980px){.layout{grid-template-columns:1fr}}
+  .section-label{display:flex;align-items:center;gap:12px;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:8px 2px 16px}
+  .section-label::after{content:"";flex:1;height:1px;background:var(--line)}
+  .section-label.mt{margin-top:30px}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  @media(max-width:640px){.grid{grid-template-columns:1fr}}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px 22px 20px;display:flex;flex-direction:column;box-shadow:var(--shadow);border-left:4px solid var(--accent,var(--teal));transition:transform .18s ease,box-shadow .18s ease;outline:none}
+  .card:hover,.card:focus-visible{transform:translateY(-3px);box-shadow:0 4px 10px rgba(22,36,58,.10),0 18px 40px rgba(22,36,58,.12)}
+  .card-top{display:flex;align-items:center;gap:13px;margin-bottom:13px}
+  .icon{width:42px;height:42px;border-radius:11px;flex-shrink:0;display:grid;place-items:center;background:var(--accent,var(--teal))}
+  .icon svg{width:22px;height:22px;stroke:#fff;stroke-width:2;fill:none;stroke-linecap:round;stroke-linejoin:round}
+  .card h3{font-size:16.5px;font-weight:700;color:var(--ink);letter-spacing:-.01em;line-height:1.2}
+  .card p{font-size:13.5px;color:var(--muted);margin-top:1px}
+  .card .desc{font-size:13.5px;color:var(--text);margin-bottom:16px}
+  .card .open{margin-top:auto;display:inline-flex;align-items:center;gap:7px;font-size:13px;font-weight:600;color:var(--accent,var(--teal))}
+  .card .open svg{width:15px;height:15px;stroke:currentColor;stroke-width:2;fill:none;stroke-linecap:round;stroke-linejoin:round}
+  .drive-card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px;box-shadow:var(--shadow)}
+  .drive-card h3{font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:19px;color:var(--ink);letter-spacing:-.01em;margin-bottom:4px}
+  .drive-card .drive-sub{font-size:13px;color:var(--muted);margin-bottom:16px}
+  .drive-card .desc{font-size:13.5px;color:var(--text);margin-bottom:14px}
+  .drive-link{display:inline-flex;align-items:center;gap:7px;margin-top:12px;font-size:13px;font-weight:600;color:var(--drive-accent)}
+  .drive-link svg{width:15px;height:15px;stroke:currentColor;stroke-width:2;fill:none;stroke-linecap:round;stroke-linejoin:round}
+  .panel{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px;box-shadow:var(--shadow);position:sticky;top:24px}
+  @media(max-width:980px){.panel{position:static}}
+  .panel-head h3{font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:19px;color:var(--ink);letter-spacing:-.01em}
+  .panel-head p{font-size:12.5px;color:var(--muted);margin-top:4px;line-height:1.5}
+  .rank-list{margin-top:18px;display:flex;flex-direction:column;gap:14px}
+  .rank-item{display:flex;flex-direction:column;gap:6px}
+  .rank-row{display:flex;justify-content:space-between;align-items:baseline;gap:8px}
+  .rank-name{display:flex;align-items:center;gap:8px;font-size:13.5px;font-weight:600;color:var(--ink)}
+  .rank-name .dot{width:9px;height:9px;border-radius:50%;flex-shrink:0}
+  .rank-name .you{font-size:10.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:#fff;background:var(--ink2);border-radius:5px;padding:1px 6px;margin-left:2px}
+  .rank-count{font-size:13.5px;font-weight:700;color:var(--text);font-variant-numeric:tabular-nums}
+  .rank-track{height:8px;border-radius:6px;background:var(--bg);overflow:hidden}
+  .rank-fill{height:100%;border-radius:6px;transition:width .5s ease}
+  .panel-foot{margin-top:18px;padding-top:14px;border-top:1px solid var(--line);font-size:11.5px;color:var(--muted);line-height:1.6}
+  .ranking-link{display:inline-flex;align-items:center;gap:5px;margin-top:10px;font-size:12px;font-weight:600;color:var(--blue)}
+  .ranking-link svg{width:13px;height:13px;stroke:currentColor;stroke-width:2;fill:none;stroke-linecap:round;stroke-linejoin:round}
+  footer{max-width:1180px;margin:0 auto;width:100%;padding:26px 24px 34px;margin-top:18px;border-top:1px solid var(--line);font-size:12.5px;color:var(--muted);line-height:1.7}
+  footer b{color:var(--text);font-weight:600}
+  @media(prefers-reduced-motion:reduce){.card{transition:none}.card:hover,.card:focus-visible{transform:none}.rank-fill{transition:none}}
+</style>
+</head>
+<body>
+<header class="masthead">
+  <div class="mast-inner">
+    <div class="mast-left">
+      <div>
+        <div class="eyebrow">Equipo Legislativo</div>
+        <div class="mast-title">Jaime Mulet</div>
+      </div>
+      <div class="mast-sub">
+        <span class="pill">Diputado</span>
+        <span>Distrito 4</span><span class="dot"></span>
+        <span>Región de Atacama</span><span class="dot"></span>
+        <span>Federación Regionalista Verde Social</span>
+      </div>
+    </div>
+    <div class="mast-right">
+      <img class="mast-photo" src="data:image/jpeg;base64,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" alt="Foto del diputado Jaime Mulet">
+    </div>
+  </div>
+</header>
+
+<div class="layout">
+  <main>
+    <div class="section-label">Sala de la Cámara</div>
+    <div class="grid">
+      <a class="card" style="--accent:var(--yellow)" href="https://www.camara.cl/verDoc.aspx?prmId=0&prmTipo=TABLASEMANAL" target="_blank" rel="noopener">
+        <div class="card-top">
+          <span class="icon"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4M8 13h2M14 13h2M8 17h2M14 17h2"/></svg></span>
+          <div><h3>Tabla Semanal</h3><p>Orden del día de la semana</p></div>
+        </div>
+        <div class="desc">Los proyectos y materias agendados para las sesiones de Sala de la semana en curso.</div>
+        <span class="open">Abrir en camara.cl <svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+      </a>
+      <a class="card" style="--accent:var(--pink)" href="https://www.camara.cl/sala/default.aspx" target="_blank" rel="noopener">
+        <div class="card-top">
+          <span class="icon"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/><circle cx="12" cy="15" r="2.4"/></svg></span>
+          <div><h3>Tabla del día</h3><p>Sesión más cercana</p></div>
+        </div>
+        <div class="desc">El trabajo en Sala de la sesión vigente: orden del día, cuenta y documentos sobre tabla.</div>
+        <span class="open">Abrir en camara.cl <svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+      </a>
+    </div>
+
+    <div class="section-label mt">Citaciones de Comisiones</div>
+    <div class="grid">
+      <a class="card" style="--accent:var(--red)" href="https://www.camara.cl/legislacion/comisiones/citaciones.aspx?prmID=3308&prmIdTipo=2101" target="_blank" rel="noopener">
+        <div class="card-top">
+          <span class="icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></span>
+          <div><h3>Constitución</h3><p>Constitución, Legislación, Justicia y Reglamento</p></div>
+        </div>
+        <div class="desc">Citaciones de la Comisión: fecha de la próxima sesión y tabla de materias a tratar.</div>
+        <span class="open">Abrir en camara.cl <svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+      </a>
+      <a class="card" style="--accent:var(--green)" href="https://www.camara.cl/legislacion/comisiones/citaciones.aspx?prmID=5002&prmIdTipo=2101" target="_blank" rel="noopener">
+        <div class="card-top">
+          <span class="icon"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/><path d="M3 6h18"/></svg></span>
+          <div><h3>Obras Públicas</h3><p>Obras Públicas, Transportes y Telecomunicaciones</p></div>
+        </div>
+        <div class="desc">Citaciones de la Comisión: fecha de la próxima sesión y tabla de materias a tratar.</div>
+        <span class="open">Abrir en camara.cl <svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+      </a>
+    </div>
+
+    <div class="section-label mt">Actividad Legislativa</div>
+    <div class="grid">
+      <a class="card" style="--accent:var(--blue)" href="https://www.camara.cl/diputados/detalle/mociones.aspx?prmId=1168" target="_blank" rel="noopener">
+        <div class="card-top">
+          <span class="icon"><svg viewBox="0 0 24 24"><path d="M9 2h6l1 4H8l1-4Z"/><path d="M7 6h10l1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L7 6Z"/><path d="M10 11h4M10 15h4"/></svg></span>
+          <div><h3>Mociones</h3><p>Proyectos de ley de Mulet</p></div>
+        </div>
+        <div class="desc">Listado oficial de mociones presentadas por el diputado Jaime Mulet en la Cámara.</div>
+        <span class="open">Abrir en camara.cl <svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+      </a>
+    </div>
+
+    <div class="section-label mt">Documentos y Minutas</div>
+    <div class="drive-card">
+      <h3>Minutas y Proyectos de Ley</h3>
+      <div class="drive-sub">Documentos de trabajo del diputado</div>
+      <p class="desc">Todas las minutas y proyectos de ley preparados por el equipo, organizados en Google Drive.</p>
+      <a href="https://drive.google.com/drive/folders/15LRWcZB13qHlK2SF4oBM2M3zTREsAt7A" target="_blank" rel="noopener"
+         style="display:flex;align-items:center;gap:16px;padding:18px 20px;background:#f8faff;border:1.5px solid #dde3ec;border-radius:12px;text-decoration:none;color:inherit;transition:box-shadow .18s ease;"
+         onmouseover="this.style.boxShadow='0 4px 14px rgba(30,58,95,.12)'"
+         onmouseout="this.style.boxShadow='none'">
+        <svg width="40" height="40" viewBox="0 0 40 40" fill="none"><rect width="40" height="40" rx="8" fill="#E8F0FE"/><path d="M14 26l5-8.66h10L24 26H14z" fill="#4285F4"/><path d="M11 21l5-8.66 5 8.66H11z" fill="#0F9D58"/><path d="M24 17.34L29 26H19l5-8.66z" fill="#FBBC04"/></svg>
+        <div>
+          <div style="font-weight:700;font-size:14.5px;color:#16243a">Carpeta Bancada DC en Google Drive</div>
+          <div style="font-size:12.5px;color:#7c8aa0;margin-top:2px">Minutas, proyectos de ley y documentos de trabajo</div>
+        </div>
+        <svg style="margin-left:auto;flex-shrink:0" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#7c8aa0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg>
+      </a>
+      <a class="drive-link" href="https://drive.google.com/drive/folders/15LRWcZB13qHlK2SF4oBM2M3zTREsAt7A" target="_blank" rel="noopener">
+        Abrir carpeta en Google Drive
+        <svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg>
+      </a>
+    </div>
+  </main>
+
+  <aside class="panel" aria-label="Ranking de mociones del Distrito 4">
+    <div class="panel-head">
+      <h3>Mociones · Distrito 4</h3>
+      <p>Proyectos de ley presentados por cada diputado/a en el período 2026–2030.</p>
+    </div>
+    <div class="rank-list" id="rankList"></div>
+    <div class="panel-foot">
+      Fuente: Cámara de Diputadas y Diputados de Chile (camara.cl). Se actualiza automáticamente una vez al día.
+      <div id="rankFecha" style="margin-top:4px;font-weight:600"></div>
+      <a class="ranking-link" href="https://equipo-patricio-pinilla.vercel.app/ranking.html" target="_blank" rel="noopener">
+        Ver ranking general (155 diputados) →
+        <svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg>
+      </a>
+    </div>
+  </aside>
+</div>
+
+<footer>
+  <div>Los accesos abren las páginas oficiales de la <b>Cámara de Diputadas y Diputados de Chile</b> (camara.cl), que se actualizan en tiempo real. Esta página solo enlaza esas fuentes.</div>
+  <div style="margin-top:10px">Sitio creado por <b>Bancada DC - JCCH</b>.</div>
+</footer>
+
+<script>
+  const NOMBRES_DISTRITO_4 = [
+    "Jaime Mulet Martínez",
+    "Cristián Tapia Ramos",
+    "Juan Santana Castillo",
+    "Paula Olmos Arroyo",
+    "Ignacio Urcullu Tagle",
+  ];
+
+  const COLOR_POR_NOMBRE = {
+    "Jaime Mulet Martínez":   "var(--rk-mulet)",
+    "Cristián Tapia Ramos":   "var(--rk-tapia)",
+    "Juan Santana Castillo":  "var(--rk-santana)",
+    "Paula Olmos Arroyo":     "var(--rk-olmos)",
+    "Ignacio Urcullu Tagle":  "var(--rk-urcullu)",
+  };
+
+  const RESPALDO = NOMBRES_DISTRITO_4.map(n => ({nombre: n, mociones: 0}));
+
+  function normalizar(s) {
+    return s.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().trim();
+  }
+
+  function renderRanking(data, actualizado) {
+    const ord = [...data].sort((a,b) => b.mociones - a.mociones);
+    const max = Math.max(...ord.map(d => d.mociones), 1);
+    document.getElementById("rankList").innerHTML = ord.map(d => {
+      const color = COLOR_POR_NOMBRE[d.nombre] || "var(--muted)";
+      const esMulet = d.nombre === "Jaime Mulet Martínez";
+      return `<div class="rank-item">
+        <div class="rank-row">
+          <span class="rank-name">
+            <span class="dot" style="background:${color}"></span>
+            ${d.nombre}
+            ${esMulet ? '<span class="you">Nuestro diputado</span>' : ""}
+          </span>
+          <span class="rank-count">${d.mociones}</span>
+        </div>
+        <div class="rank-track">
+          <div class="rank-fill" style="width:${(d.mociones/max*100).toFixed(0)}%;background:${color}"></div>
+        </div>
+      </div>`;
+    }).join("");
+    const el = document.getElementById("rankFecha");
+    if (el && actualizado) {
+      el.textContent = "Última actualización: " + new Date(actualizado).toLocaleDateString("es-CL", {day:"numeric",month:"long",year:"numeric"});
+    }
+  }
+
+  async function cargarRanking() {
+    try {
+      const resp = await fetch("https://equipo-patricio-pinilla.vercel.app/api/ranking");
+      const data = await resp.json();
+      if (!data?.ranking || data.error) throw new Error("Sin datos");
+      const mocionesMap = {};
+      data.ranking.forEach(d => { mocionesMap[normalizar(d.nombre)] = d.mociones; });
+      const d4 = NOMBRES_DISTRITO_4.map(nombre => ({
+        nombre, mociones: mocionesMap[normalizar(nombre)] ?? 0
+      }));
+      renderRanking(d4, data.actualizado);
+    } catch(e) {
+      renderRanking(RESPALDO, null);
+    }
+  }
+
+  cargarRanking();
+</script>
+
+<script>
+  if ("serviceWorker" in navigator) {
+    window.addEventListener("load", () => {
+      navigator.serviceWorker.register("/service-worker.js").catch(() => {});
+    });
+  }
+</script>
+</body>
+</html>
